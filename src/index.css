@@ -1,7 +1,17 @@
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@layer components {
+  .myBtn {
+    @apply px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors duration-200;
+  }
+
+  .myContainer {
+    @apply max-w-[1200px] mx-auto;
+  }
 }
