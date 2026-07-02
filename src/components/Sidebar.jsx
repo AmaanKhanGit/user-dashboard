@@ -64,7 +64,7 @@ const Sidebar = ({ onClose, className }) => {
         })}
       </div>
 
-      <Button>Logout</Button>
+      <Button className="dangerBtn">Logout</Button>
     </div>
   );
 };

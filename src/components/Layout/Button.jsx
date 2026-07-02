@@ -1,5 +1,5 @@
-const Button = ({ children }) => {
-  return <div className="myBtn"> {children}</div>;
+const Button = ({ children, className }) => {
+  return <div className={`myBtn ${className}`}> {children}</div>;
 };
 
 export default Button;
