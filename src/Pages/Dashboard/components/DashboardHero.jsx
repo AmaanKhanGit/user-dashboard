@@ -3,7 +3,7 @@ const DashboardHero = () => {
   return (
     <section className="flex justify-between rounded-xl bg-white px-3 py-6 max-md:flex-col">
       <div className="flex flex-col gap-4">
-        <h1 className="flex text-3xl font-bold sm:flex-col">
+        <h1 className="text-3xl font-bold">
           <div>Good Morning,</div>
           <div className="text-purple-700">Username</div>
         </h1>
