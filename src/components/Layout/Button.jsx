@@ -1,5 +1,5 @@
 const Button = ({ children, className }) => {
-  return <div className={`myBtn ${className}`}> {children}</div>;
+  return <button className={`myBtn ${className}`}> {children}</button>;
 };
 
 export default Button;
