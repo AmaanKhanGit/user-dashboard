@@ -27,7 +27,7 @@ const DashboardLayout = ({ children, className }) => {
           <Sidebar className="z-10 flex h-[90%] w-64 flex-col justify-between bg-white px-6 shadow" />
         </DesktopDrawer>
 
-        <main className="h-screen flex-1 overflow-y-auto bg-gray-200 p-4">
+        <main className="h-screen flex-1 scrollbar-none overflow-y-auto bg-gray-200 p-4">
           {children}
         </main>
       </div>

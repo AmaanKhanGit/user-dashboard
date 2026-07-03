@@ -8,7 +8,7 @@ body,
 
 @layer components {
   .myBtn {
-    @apply cursor-pointer rounded-lg bg-purple-600 px-4 py-2 font-medium text-white transition-colors duration-200 hover:bg-purple-700;
+    @apply cursor-pointer rounded-lg bg-purple-600 p-2 font-medium text-white transition-colors duration-200 hover:bg-purple-700 lg:px-4 lg:py-2;
   }
 
   .dangerBtn {
