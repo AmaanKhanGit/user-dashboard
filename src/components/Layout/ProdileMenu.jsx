@@ -24,12 +24,12 @@ const ProfileMenu = () => {
         }`}
       >
         <Link to="/profile">
-          <button className="w-full cursor-pointer rounded-xl px-4 py-3 text-left transition-colors hover:bg-gray-100">
+          <button className="w-full cursor-pointer rounded-xl px-4 py-3 text-left text-lg transition-colors hover:bg-gray-100">
             Profile
           </button>
         </Link>
 
-        <button className="w-full cursor-pointer rounded-xl px-4 py-3 text-left text-red-600 transition-colors hover:bg-red-50">
+        <button className="w-full cursor-pointer rounded-xl px-4 py-3 text-left text-lg text-red-600 transition-colors hover:bg-red-50">
           Logout
         </button>
       </div>
