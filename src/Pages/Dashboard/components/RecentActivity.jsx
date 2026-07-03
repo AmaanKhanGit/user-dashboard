@@ -2,7 +2,7 @@ import Button from "../../../components/Layout/Button";
 import { CgLogIn, CgNotes } from "react-icons/cg";
 import { AiOutlineCheck, AiOutlineUser } from "react-icons/ai";
 const RecentActivity = ({ className }) => {
-  const varients = {
+  const variants = {
     purpleVar: "bg-purple-100 text-purple-800",
     greenVar: "bg-green-100 text-green-800",
     redVar: "bg-red-100 text-red-800",
@@ -14,35 +14,35 @@ const RecentActivity = ({ className }) => {
       title: "Updated Profile",
       description: "You updated your profile information",
       time: "2m ago",
-      varient: varients.purpleVar,
+      varient: variants.purpleVar,
     },
     {
       icon: AiOutlineCheck,
       title: "Completed Task",
       description: "Design new dashboard UI",
       time: "1h ago",
-      varient: varients.greenVar,
+      varient: variants.greenVar,
     },
     {
       icon: CgNotes,
       title: "Created Note",
       description: "Meeting notes - Project Alpha",
       time: "3m ago",
-      varient: varients.redVar,
+      varient: variants.redVar,
     },
     {
       icon: CgLogIn,
       title: "Logged In",
       description: "You logged in succesfully",
       time: "10h ago",
-      varient: varients.blueVar,
+      varient: variants.blueVar,
     },
     {
       icon: AiOutlineUser,
       title: "Updated Profile",
       description: "You updated your profile information",
       time: "2m ago",
-      varient: varients.purpleVar,
+      varient: variants.purpleVar,
     },
 
     {
@@ -50,21 +50,21 @@ const RecentActivity = ({ className }) => {
       title: "Completed Task",
       description: "Design new dashboard UI",
       time: "1h ago",
-      varient: varients.greenVar,
+      varient: variants.greenVar,
     },
     {
       icon: CgNotes,
       title: "Created Note",
       description: "Meeting notes - Project Alpha",
       time: "3m ago",
-      varient: varients.redVar,
+      varient: variants.redVar,
     },
     {
       icon: CgLogIn,
       title: "Logged In",
       description: "You logged in succesfully",
       time: "10h ago",
-      varient: varients.blueVar,
+      varient: variants.blueVar,
     },
   ];
 
