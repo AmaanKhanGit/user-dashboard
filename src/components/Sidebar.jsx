@@ -43,7 +43,7 @@ const Sidebar = ({ onClose, className }) => {
 
   return (
     <div className={className}>
-      <div className=" flex flex-col gap-4 justify-between items-start ">
+      <div className="flex flex-col items-start justify-between gap-4">
         {links.map((link) => {
           const Icon = link.icon;
           return (
@@ -52,7 +52,7 @@ const Sidebar = ({ onClose, className }) => {
               key={link.title}
               onClick={handleClick}
               className={({ isActive }) =>
-                `text-xl rounded-lg w-full py-2 px-4 font-medium text-gray-700 cursor-pointer hover:bg-gray-100 transition-colors duration-200 ${isActive ? "bg-gray-100 text-purple-700" : "bg-white"}`
+                `w-full cursor-pointer rounded-lg px-4 py-2 text-xl font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-100 ${isActive ? "bg-gray-100 text-purple-700" : "bg-white"}`
               }
             >
               <div className="flex items-center gap-2">

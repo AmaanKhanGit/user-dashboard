@@ -8,26 +8,26 @@ import Overlay from "./Overlay";
 const DashboardLayout = ({ children }) => {
   const [isOpen, setOpen] = useState(false);
   return (
-    <div className="h-full flex flex-col">
+    <div className="flex h-full flex-col">
       {isOpen && <Overlay onClose={() => setOpen(false)} />}
 
       <Topnav onClose={() => setOpen((prev) => !prev)} />
 
       <div className="flex flex-1">
         <MobileDrawer
-          className={`fixed bg-white md:static top-0 left-0 h-screen w-64 z-50 transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"} sm:hidden`}
+          className={`fixed top-0 left-0 z-50 h-screen w-64 bg-white transition-transform duration-300 md:static ${isOpen ? "translate-x-0" : "-translate-x-full"} sm:hidden`}
         >
           <Sidebar
-            className="z-10 h-[90%] px-6 w-64 py-5 bg-white flex flex-col justify-between"
+            className="z-10 flex h-[90%] w-64 flex-col justify-between bg-white px-6 py-5"
             onClose={() => setOpen(false)}
           />
         </MobileDrawer>
 
         <DesktopDrawer className={`max-sm:hidden`}>
-          <Sidebar className="z-10 h-[90%] px-6 w-64 shadow bg-white flex flex-col justify-between" />
+          <Sidebar className="z-10 flex h-[90%] w-64 flex-col justify-between bg-white px-6 shadow" />
         </DesktopDrawer>
 
-        <main className="flex-1 h-screen overflow-y-auto bg-gray-200 ">
+        <main className="h-screen flex-1 overflow-y-auto bg-gray-200">
           {children}
         </main>
       </div>
