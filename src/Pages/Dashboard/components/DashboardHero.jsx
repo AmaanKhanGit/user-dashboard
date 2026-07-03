@@ -4,7 +4,7 @@ import { CgNotes } from "react-icons/cg";
 const DashboardHero = ({ className }) => {
   return (
     <section
-      className={`sections justify-betweenmax-md:flex-col flex ${className}`}
+      className={`sections justify-between max-md:flex-col flex ${className}`}
     >
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-bold">
