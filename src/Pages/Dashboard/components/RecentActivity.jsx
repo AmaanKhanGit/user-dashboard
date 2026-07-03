@@ -2,7 +2,7 @@ import Button from "../../../components/Layout/Button";
 import { CgLogIn, CgNotes } from "react-icons/cg";
 import { AiOutlineCheck, AiOutlineUser } from "react-icons/ai";
 const RecentActivity = ({ className }) => {
-  const variants = {
+   const variants = {
     purpleVar: "bg-purple-100 text-purple-800",
     greenVar: "bg-green-100 text-green-800",
     redVar: "bg-red-100 text-red-800",
