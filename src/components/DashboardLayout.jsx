@@ -18,7 +18,7 @@ const DashboardLayout = ({ children, className }) => {
           className={`fixed top-0 left-0 z-50 h-screen w-64 bg-white transition-transform duration-300 md:static ${isOpen ? "translate-x-0" : "-translate-x-full"} sm:hidden`}
         >
           <Sidebar
-            className="z-10 flex h-[90%] w-64 flex-col justify-between bg-white"
+            className="z-10 flex h-full w-64 flex-col justify-between bg-white p-6"
             onClose={() => setOpen(false)}
           />
         </MobileDrawer>
