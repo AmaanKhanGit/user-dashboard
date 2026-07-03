@@ -1,4 +1,6 @@
+import { FaPlus } from "react-icons/fa";
 import Button from "../../../components/Layout/Button";
+import { CgNotes } from "react-icons/cg";
 const DashboardHero = ({ className }) => {
   return (
     <section
@@ -14,8 +16,12 @@ const DashboardHero = ({ className }) => {
           Focus on progress not perfection <br /> Yor're doing great!
         </p>
         <div className="flex gap-3">
-          <Button> + Create Task</Button>
-          <Button className="hollowBtn"> View Tasks</Button>
+          <Button className="flex shrink-0 items-center justify-center gap-2">
+            <FaPlus /> Create Task
+          </Button>
+          <Button className="hollowBtn flex shrink-0 items-center justify-center gap-2">
+            <CgNotes /> View Tasks
+          </Button>
         </div>
       </div>
       <div className="">

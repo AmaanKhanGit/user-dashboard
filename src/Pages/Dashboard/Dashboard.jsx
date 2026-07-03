@@ -1,10 +1,14 @@
 import DashboardLayout from "../../components/DashboardLayout";
 import DashboardHero from "./components/DashboardHero";
+import RecentActivity from "./components/RecentActivity";
+import StatusCards from "./components/StatusCards";
 
 const Dashboard = () => {
   return (
-    <DashboardLayout className="p-5">
-      <DashboardHero />
+    <DashboardLayout className="grid grid-cols-3 gap-3 max-lg:flex max-lg:flex-col">
+      <DashboardHero className="col-span-2" />
+      <RecentActivity className="row-span-2" />
+      <StatusCards />
     </DashboardLayout>
   );
 };
