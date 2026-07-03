@@ -1,5 +1,5 @@
 import { FaMoon, FaBell, FaBars } from "react-icons/fa";
-import ProfileMenu from "./Layout/ProdileMane";
+import ProfileMenu from "./Layout/ProdileMenu";
 const Topnav = ({ onClose }) => {
   return (
     <div className="sticky top-0 z-20 h-16 bg-white shadow">

@@ -5,7 +5,7 @@ import MobileDrawer from "./Drawers/MobileDrawer";
 import DesktopDrawer from "./Drawers/DesktopDrawer";
 import Overlay from "./Overlay";
 
-const DashboardLayout = ({ children }) => {
+const DashboardLayout = ({ children, className }) => {
   const [isOpen, setOpen] = useState(false);
   return (
     <div className="flex h-full flex-col">
@@ -18,7 +18,7 @@ const DashboardLayout = ({ children }) => {
           className={`fixed top-0 left-0 z-50 h-screen w-64 bg-white transition-transform duration-300 md:static ${isOpen ? "translate-x-0" : "-translate-x-full"} sm:hidden`}
         >
           <Sidebar
-            className="z-10 flex h-[90%] w-64 flex-col justify-between bg-white px-6 py-5"
+            className="z-10 flex h-[90%] w-64 flex-col justify-between bg-white"
             onClose={() => setOpen(false)}
           />
         </MobileDrawer>
@@ -27,7 +27,7 @@ const DashboardLayout = ({ children }) => {
           <Sidebar className="z-10 flex h-[90%] w-64 flex-col justify-between bg-white px-6 shadow" />
         </DesktopDrawer>
 
-        <main className="h-screen flex-1 overflow-y-auto bg-gray-200">
+        <main className="h-screen flex-1 overflow-y-auto bg-gray-200 p-4">
           {children}
         </main>
       </div>
