@@ -74,7 +74,7 @@ const RecentActivity = ({ className }) => {
         <h3 className="text-lg font-medium text-purple-600">Recent Activity</h3>
         <Button className="hollowBtn px-3 py-1">View all</Button>
       </div>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-10">
         {activities.map((activity) => {
           const Icon = activity.icon;
           return (

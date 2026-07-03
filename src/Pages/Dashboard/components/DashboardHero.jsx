@@ -1,12 +1,13 @@
 import { FaPlus } from "react-icons/fa";
 import Button from "../../../components/Layout/Button";
 import { CgNotes } from "react-icons/cg";
+import StatusCards from "./StatusCards";
 const DashboardHero = ({ className }) => {
   return (
     <section
-      className={`sections justify-between max-md:flex-col flex ${className}`}
+      className={`sections flex justify-between max-md:flex-col ${className}`}
     >
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-5">
         <h1 className="text-3xl font-bold">
           <div>Good Morning,</div>
           <div className="text-purple-700">Username</div>
