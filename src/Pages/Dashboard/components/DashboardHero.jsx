@@ -1,7 +1,9 @@
 import Button from "../../../components/Layout/Button";
-const DashboardHero = () => {
+const DashboardHero = ({ className }) => {
   return (
-    <section className="flex justify-between rounded-xl bg-white px-3 py-6 max-md:flex-col">
+    <section
+      className={`sections justify-betweenmax-md:flex-col flex ${className}`}
+    >
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-bold">
           <div>Good Morning,</div>
