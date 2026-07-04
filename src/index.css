@@ -30,4 +30,8 @@ body,
   .section-heading {
     @apply text-lg font-bold md:text-lg lg:text-xl xl:font-medium;
   }
+
+  .tag {
+    @apply px-2 py-1 text-sm font-bold;
+  }
 }
