@@ -1,5 +1,6 @@
 import DashboardLayout from "../../components/DashboardLayout";
 import DashboardHero from "./components/DashboardHero";
+import ProductivityGraph from "./components/ProductivityGraph";
 import RecentActivity from "./components/RecentActivity";
 import StatusCards from "./components/StatusCards";
 
@@ -9,6 +10,7 @@ const Dashboard = () => {
       <DashboardHero className="col-span-2" />
       <RecentActivity className="row-span-2" />
       <StatusCards className="col-span-2" />
+      <ProductivityGraph />
     </DashboardLayout>
   );
 };
