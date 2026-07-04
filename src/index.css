@@ -27,7 +27,7 @@ body,
     @apply rounded-xl bg-white px-3 py-6;
   }
 
-  .section-heading{
-    @apply text-xl font-medium
+  .section-heading {
+    @apply text-lg font-bold md:text-lg lg:text-xl xl:font-medium;
   }
 }

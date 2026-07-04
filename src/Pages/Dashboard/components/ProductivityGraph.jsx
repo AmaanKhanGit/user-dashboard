@@ -3,10 +3,10 @@ import Button from "../../../components/Layout/Button";
 const ProductivityGraph = () => {
   return (
     <section className="sections">
-      <div className="flex justify-between">
+      <div className="flex items-center justify-between">
         <h2 className="section-heading">Productivity Overview</h2>
-        <Button className="hollowBtn">This Week </Button>
-        {/*thi will be a dropdown*/}
+        {/* <Button className="hollowBtn lg:px-1.5">This Week</Button>
+        thi will be a dropdown */}
       </div>
       <div className="">
         <img className="w-full" src="/graph.png" alt="" />
