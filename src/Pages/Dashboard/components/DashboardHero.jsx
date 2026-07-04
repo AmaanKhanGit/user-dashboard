@@ -1,7 +1,6 @@
 import { FaPlus } from "react-icons/fa";
 import Button from "../../../components/Layout/Button";
 import { CgNotes } from "react-icons/cg";
-import StatusCards from "./StatusCards";
 const DashboardHero = ({ className }) => {
   return (
     <section
