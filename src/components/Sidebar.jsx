@@ -42,8 +42,8 @@ const Sidebar = ({ onClose, className }) => {
   };
 
   return (
-    <div className={className}>
-      <div className="flex flex-col items-start justify-between gap-4">
+    <aside className={className}>
+      <div className="flex flex-1 flex-col items-start gap-4">
         {links.map((link) => {
           const Icon = link.icon;
           return (
@@ -64,8 +64,8 @@ const Sidebar = ({ onClose, className }) => {
         })}
       </div>
 
-      <Button className="dangerBtn">Logout</Button>
-    </div>
+      <Button className="dangerBtn mt-auto">Logout</Button>
+    </aside>
   );
 };
 
