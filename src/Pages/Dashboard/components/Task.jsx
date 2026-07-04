@@ -1,4 +1,4 @@
-const Task = () => {
+const Task = ({ task }) => {
   return (
     <div className="flex items-start gap-4 rounded-xl border border-gray-200 p-3">
       <input
@@ -10,16 +10,16 @@ const Task = () => {
       />
       <div className="flex flex-1 justify-between">
         <div className="flex flex-col gap-1">
-          <h3 className="text-sm font-bold">Design new dashboard UI</h3>
-          <p className="self-start rounded bg-red-50 px-1.5 py-1 text-sm font-medium text-red-600">
-            High
+          <h3 className="text-sm font-bold">{task.title}</h3>
+          <p
+            className={`self-start rounded px-1.5 py-1 text-sm font-medium ${task.colors.priorityColor}`}
+          >
+            {task.priority}
           </p>
-          <p className="text-xs font-medium text-gray-400">
-            Due today, 11:59 PM
-          </p>
+          <p className="text-xs font-medium text-gray-400">{task.dueDate}</p>
         </div>
-        <p className="tag self-center rounded bg-green-200 text-green-600">
-          In Progress
+        <p className={`tag self-center rounded ${task.colors.statusColor}`}>
+          {task.status}
         </p>
       </div>
     </div>

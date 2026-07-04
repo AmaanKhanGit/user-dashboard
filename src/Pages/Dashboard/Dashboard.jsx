@@ -1,6 +1,7 @@
 import DashboardLayout from "../../components/DashboardLayout";
 import DashboardHero from "./components/DashboardHero";
 import ProductivityGraph from "./components/ProductivityGraph";
+import QuickActions from "./components/QuickActions";
 import RecentActivity from "./components/RecentActivity";
 import StatusCards from "./components/StatusCards";
 import TodaysTasks from "./components/TodaysTasks";
@@ -13,6 +14,7 @@ const Dashboard = () => {
       <StatusCards className="col-span-2" />
       <ProductivityGraph />
       <TodaysTasks />
+      <QuickActions />
     </DashboardLayout>
   );
 };
