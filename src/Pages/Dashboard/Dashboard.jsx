@@ -3,6 +3,7 @@ import DashboardHero from "./components/DashboardHero";
 import ProductivityGraph from "./components/ProductivityGraph";
 import RecentActivity from "./components/RecentActivity";
 import StatusCards from "./components/StatusCards";
+import TodaysTasks from "./components/TodaysTasks";
 
 const Dashboard = () => {
   return (
@@ -11,6 +12,7 @@ const Dashboard = () => {
       <RecentActivity className="row-span-2" />
       <StatusCards className="col-span-2" />
       <ProductivityGraph />
+      <TodaysTasks />
     </DashboardLayout>
   );
 };

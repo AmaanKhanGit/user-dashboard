@@ -2,7 +2,7 @@ import Button from "../../../components/Layout/Button";
 import { CgLogIn, CgNotes } from "react-icons/cg";
 import { AiOutlineCheck, AiOutlineUser } from "react-icons/ai";
 const RecentActivity = ({ className }) => {
-   const variants = {
+  const variants = {
     purpleVar: "bg-purple-100 text-purple-800",
     greenVar: "bg-green-100 text-green-800",
     redVar: "bg-red-100 text-red-800",
@@ -71,7 +71,7 @@ const RecentActivity = ({ className }) => {
   return (
     <section className={`sections flex flex-col gap-5 ${className}`}>
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-medium text-purple-600">Recent Activity</h3>
+        <h3 className="section-heading">Recent Activity</h3>
         <Button className="hollowBtn px-3 py-1">View all</Button>
       </div>
       <div className="flex flex-col gap-10">

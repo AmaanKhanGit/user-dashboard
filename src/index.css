@@ -26,4 +26,8 @@ body,
   .sections {
     @apply rounded-xl bg-white px-3 py-6;
   }
+
+  .section-heading{
+    @apply text-xl font-medium
+  }
 }

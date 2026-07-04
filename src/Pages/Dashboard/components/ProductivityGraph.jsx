@@ -4,7 +4,7 @@ const ProductivityGraph = () => {
   return (
     <section className="sections">
       <div className="flex justify-between">
-        <h2 className="text-xl">Productivity Overview</h2>
+        <h2 className="section-heading">Productivity Overview</h2>
         <Button className="hollowBtn">This Week </Button>
         {/*thi will be a dropdown*/}
       </div>
