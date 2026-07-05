@@ -10,8 +10,8 @@ const Dashboard = () => {
   return (
     <DashboardLayout className="grid grid-cols-3 gap-3 max-lg:flex max-lg:flex-col">
       <DashboardHero className="col-span-2" />
-      <RecentActivity className="row-span-2" />
-      <StatusCards className="col-span-2" />
+      <RecentActivity className="" />
+      <StatusCards className="col-span-3" />
       <ProductivityGraph />
       <TodaysTasks />
       <QuickActions />

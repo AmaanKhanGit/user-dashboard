@@ -37,35 +37,6 @@ const RecentActivity = ({ className }) => {
       time: "10h ago",
       varient: variants.blueVar,
     },
-    {
-      icon: AiOutlineUser,
-      title: "Updated Profile",
-      description: "You updated your profile information",
-      time: "2m ago",
-      varient: variants.purpleVar,
-    },
-
-    {
-      icon: AiOutlineCheck,
-      title: "Completed Task",
-      description: "Design new dashboard UI",
-      time: "1h ago",
-      varient: variants.greenVar,
-    },
-    {
-      icon: CgNotes,
-      title: "Created Note",
-      description: "Meeting notes - Project Alpha",
-      time: "3m ago",
-      varient: variants.redVar,
-    },
-    {
-      icon: CgLogIn,
-      title: "Logged In",
-      description: "You logged in succesfully",
-      time: "10h ago",
-      varient: variants.blueVar,
-    },
   ];
 
   return (

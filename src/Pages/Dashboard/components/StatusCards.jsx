@@ -56,7 +56,7 @@ const StatusCards = ({ className }) => {
 
   return (
     <section
-      className={`flex flex-wrap items-center justify-center gap-3 bg-transparent sm:grid sm:grid-cols-2 xl:grid-cols-4 ${className}`}
+      className={`flex flex-wrap items-center justify-center gap-3 bg-transparent sm:grid sm:grid-cols-2 xl:auto-cols-auto ${className}`}
     >
       {cardData.map((card) => (
         <Card card={card} key={card.title} />

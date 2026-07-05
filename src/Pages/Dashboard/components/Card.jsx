@@ -5,7 +5,7 @@ const Card = ({ card }) => {
   const TrendIcon = card.arrowIcon;
 
   return (
-    <div className="sections h-40 w-full">
+    <div className="sections w-full">
       {/* Top */}
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
