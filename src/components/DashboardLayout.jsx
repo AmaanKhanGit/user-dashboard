@@ -29,7 +29,7 @@ const DashboardLayout = ({ children, className }) => {
         </DesktopDrawer>
 
         <main
-          className={`min-h-0 flex-1 scrollbar-none overflow-y-auto bg-gray-100 p-4 ${className}`}
+          className={`min-h-0 flex-1 scrollbar-none overflow-y-auto bg-gray-100 ${className}`}
         >
           {children}
         </main>
