@@ -28,7 +28,9 @@ const Card = ({ card }) => {
 
       {/* Bottom */}
       <div className="mt-5 flex items-center gap-2 text-sm">
-        <span className="flex items-center gap-1 font-medium text-green-500">
+        <span
+          className={`flex items-center gap-1 font-medium ${card.statusColor} `}
+        >
           <TrendIcon />
           {card.percentage}
         </span>

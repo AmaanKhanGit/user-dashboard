@@ -24,6 +24,7 @@ const StatusCards = ({ className }) => {
       icon: CgNotes,
       arrowIcon: FaArrowTrendUp,
       colorVariant: colorVariants.purpleVar,
+      statusColor: "text-green-600",
     },
     {
       title: "Completed",
@@ -33,6 +34,7 @@ const StatusCards = ({ className }) => {
       icon: FaRegCircleCheck,
       arrowIcon: FaArrowTrendUp,
       colorVariant: colorVariants.greenVar,
+      statusColor: "text-green-600",
     },
     {
       title: "Pending",
@@ -42,6 +44,7 @@ const StatusCards = ({ className }) => {
       icon: GoStopwatch,
       arrowIcon: FaArrowTrendDown,
       colorVariant: colorVariants.oragneVar,
+      statusColor: "text-red-600",
     },
     {
       title: "Productiviy",
@@ -51,6 +54,7 @@ const StatusCards = ({ className }) => {
       icon: FaArrowTrendUp,
       arrowIcon: FaArrowTrendUp,
       colorVariant: colorVariants.purpleVar,
+      statusColor: "text-green-600",
     },
   ];
 
