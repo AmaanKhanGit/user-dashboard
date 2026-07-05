@@ -8,7 +8,7 @@ import TodaysTasks from "./components/TodaysTasks";
 
 const Dashboard = () => {
   return (
-    <DashboardLayout className="grid grid-cols-3 gap-3 max-lg:flex max-lg:flex-col">
+    <DashboardLayout className="grid grid-cols-3 gap-3 p-4 max-lg:flex max-lg:flex-col">
       <DashboardHero className="col-span-2" />
       <RecentActivity className="" />
       <StatusCards className="col-span-3" />
