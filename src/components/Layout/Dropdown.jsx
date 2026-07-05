@@ -9,7 +9,7 @@ const Dropdown = () => {
       {/* Three Dots */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="rounded-lg p-2 transition-colors duration-200 hover:bg-gray-100"
+        className="rounded-lg p-2 transition-colors duration-200 hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:outline-none"
       >
         <FaEllipsisV className="text-gray-600" />
       </button>
