@@ -1,6 +1,8 @@
-const FormLayout = ({ children }) => {
+const FormLayout = ({ children, className }) => {
   return (
-    <section className="flex h-screen items-center justify-center bg-white sm:bg-gray-100">
+    <section
+      className={`flex h-screen items-start justify-center sm:items-center ${className}`}
+    >
       {children}
     </section>
   );

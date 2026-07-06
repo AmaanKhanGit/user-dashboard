@@ -22,8 +22,8 @@ const Signup = () => {
   };
 
   return (
-    <FormLayout>
-      <div className="my-2 flex max-h-[90vh] max-w-150 flex-col gap-9 rounded-3xl bg-white px-5 py-7 max-sm:w-full">
+    <FormLayout className="bg-white sm:bg-gray-100">
+      <div className="my-2 flex  max-w-150 flex-col gap-9 rounded-3xl bg-white p-7 max-sm:w-full">
         <h1 className="text-3xl font-bold">Create an account</h1>
         <Formik
           initialValues={{
