@@ -4,6 +4,7 @@ import Profile from "./Pages/Profile/Profile";
 import Notifications from "./Pages/Notifications/Notifications";
 import Settings from "./Pages/Settings/Settings";
 import Help from "./Pages/Help/Help";
+import Signup from "./Pages/Auth/signup/Signup";
 
 const router = createBrowserRouter([
   { path: "/", element: <Dashboard /> },
@@ -11,6 +12,8 @@ const router = createBrowserRouter([
   { path: "/notifications", element: <Notifications /> },
   { path: "/settings", element: <Settings /> },
   { path: "/help", element: <Help /> },
+  { path: "/signup", element: <Signup /> },
+  { path: "/signin", element: <Help /> },
 ]);
 
 function App() {
