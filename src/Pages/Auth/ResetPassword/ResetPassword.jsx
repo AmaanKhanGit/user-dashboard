@@ -21,7 +21,7 @@ const ResetPassword = () => {
   const navigate = useNavigate();
 
   const { mutate } = useMutation({
-    mutationKey: ["reset-pass", token],
+    mutationKey: ["reset-pass"],
     mutationFn: verifyForgotToken,
     onSuccess: () => {
       navigate("/reset-success");
