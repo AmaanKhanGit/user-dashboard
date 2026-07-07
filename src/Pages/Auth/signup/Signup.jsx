@@ -1,6 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { object, string, ref } from "yup";
 import FormLayout from "../../../components/FormLayout";
+import AuthCard from "../../../components/AuthCard";
 import Button from "../../../components/Layout/Button";
 import { Link } from "react-router-dom";
 
@@ -22,8 +23,8 @@ const Signup = () => {
   };
 
   return (
-    <FormLayout className="bg-white sm:bg-gray-100">
-      <div className="my-2 flex  max-w-150 flex-col gap-9 rounded-3xl bg-white p-7 max-sm:w-full">
+    <FormLayout>
+      <AuthCard className="w-130">
         <h1 className="text-3xl font-bold">Create an account</h1>
         <Formik
           initialValues={{
@@ -36,14 +37,14 @@ const Signup = () => {
           onSubmit={handleSubmit}
           validationSchema={signUpValidationSchema}
         >
-          <Form className="flex flex-col gap-5 bg-white">
+          <Form className="flex flex-col gap-2 bg-white">
             <div className="flex gap-3">
-              <div className="flex flex-col gap-4 px-3 py-2">
-                <label className="text-lg font-medium" htmlFor="firstName">
+              <div className="flex flex-col gap-3 px-3 py-2">
+                <label className="text-sm font-medium" htmlFor="firstName">
                   First Name
                 </label>
                 <Field
-                  className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-lg text-gray-600 outline-purple-600"
+                  className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-sm text-gray-600 outline-purple-600"
                   id="firstName"
                   name="firstName"
                   placeholder="John"
@@ -54,12 +55,12 @@ const Signup = () => {
                   component="div"
                 />
               </div>
-              <div className="flex flex-col gap-4 px-3 py-2">
-                <label className="text-lg font-medium" htmlFor="lastName">
+              <div className="flex flex-col gap-3 px-3 py-2">
+                <label className="text-sm font-medium" htmlFor="lastName">
                   Last Name
                 </label>
                 <Field
-                  className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-lg text-gray-600 outline-purple-600"
+                  className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-sm text-gray-600 outline-purple-600"
                   id="lastName"
                   name="lastName"
                   placeholder="Doe"
@@ -71,12 +72,12 @@ const Signup = () => {
                 />
               </div>
             </div>
-            <div className="flex flex-col gap-4 px-3 py-2">
-              <label className="text-lg font-medium" htmlFor="email">
+            <div className="flex flex-col gap-3 px-3 py-2">
+              <label className="text-sm font-medium" htmlFor="email">
                 Email
               </label>
               <Field
-                className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-lg text-gray-600 outline-purple-600"
+                className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-sm text-gray-600 outline-purple-600"
                 id="email"
                 name="email"
                 placeholder="johndoe@example.com"
@@ -87,12 +88,12 @@ const Signup = () => {
                 component="div"
               />
             </div>
-            <div className="flex flex-col gap-4 px-3 py-2">
-              <label className="text-lg font-medium" htmlFor="password">
+            <div className="flex flex-col gap-3 px-3 py-2">
+              <label className="text-sm font-medium" htmlFor="password">
                 Create Password
               </label>
               <Field
-                className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-lg text-gray-600 outline-purple-600"
+                className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-sm text-gray-600 outline-purple-600"
                 id="password"
                 name="password"
                 type="password"
@@ -103,12 +104,12 @@ const Signup = () => {
                 component="div"
               />
             </div>
-            <div className="flex flex-col gap-4 px-3 py-2">
-              <label className="text-lg font-medium" htmlFor="repeatPassword">
+            <div className="flex flex-col gap-2 px-3 py-2">
+              <label className="text-sm font-medium" htmlFor="repeatPassword">
                 Repeat Password
               </label>
               <Field
-                className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-lg text-gray-600 outline-purple-600"
+                className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-sm text-gray-600 outline-purple-600"
                 id="repeatPassword"
                 name="repeatPassword"
                 type="password"
@@ -128,7 +129,7 @@ const Signup = () => {
             </p>
           </Form>
         </Formik>
-      </div>
+      </AuthCard>
     </FormLayout>
   );
 };

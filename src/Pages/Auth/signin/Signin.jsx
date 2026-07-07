@@ -3,6 +3,7 @@ import { object, string, ref } from "yup";
 import FormLayout from "../../../components/FormLayout";
 import Button from "../../../components/Layout/Button";
 import { Link } from "react-router-dom";
+import AuthCard from "../../../components/AuthCard";
 
 const Signin = () => {
   const signInValidationSchema = object({
@@ -17,9 +18,9 @@ const Signin = () => {
   };
 
   return (
-    <FormLayout className="bg-gray-100">
-      <div className="flex w-125 flex-col gap-9 rounded-3xl bg-white p-7 max-sm:mt-30 max-sm:w-[90%]">
-        <h1 className="text-3xl font-bold">Login to your account</h1>
+    <FormLayout>
+      <AuthCard className="w-130">
+        <h1 className="text-2xl font-bold">Login to your account</h1>
         <Formik
           initialValues={{
             email: "",
@@ -28,13 +29,13 @@ const Signin = () => {
           onSubmit={handleSubmit}
           validationSchema={signInValidationSchema}
         >
-          <Form className="flex flex-col gap-5 bg-white">
+          <Form className="flex flex-col gap-3 bg-white">
             <div className="flex flex-col gap-4 px-3 py-2">
-              <label className="text-lg font-medium" htmlFor="email">
+              <label className="text-sm font-medium" htmlFor="email">
                 Email
               </label>
               <Field
-                className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-lg text-gray-600 outline-purple-600"
+                className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-sm text-gray-600 outline-purple-600"
                 id="email"
                 name="email"
                 placeholder="Enter your email"
@@ -46,11 +47,11 @@ const Signin = () => {
               />
             </div>
             <div className="flex flex-col gap-4 px-3 py-2">
-              <label className="text-lg font-medium" htmlFor="password">
+              <label className="text-sm font-medium" htmlFor="password">
                 Password
               </label>
               <Field
-                className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-lg text-gray-600 outline-purple-600"
+                className="h-10 w-full rounded-[10px] border border-gray-400 px-4 py-2 text-sm text-gray-600 outline-purple-600"
                 id="password"
                 name="password"
                 type="password"
@@ -62,17 +63,25 @@ const Signin = () => {
                 component="div"
               />
             </div>
+            <div className="flex justify-between">
+              <div className="flex gap-2">
+                <input type="checkbox" name="" id="" />
 
+                <p>Remember me</p>
+              </div>
+              <p className="textgray-300 self-end text-sm text-gray-600">
+                <Link to="/forgot-password" className="ml-1 text-purple-600">
+                  Forgot Password
+                </Link>
+              </p>
+            </div>
             <Button type="submit">Login</Button>
-            <p className="textgray-300 self-center text-sm text-gray-600">
-              Don't have an account?
-              <Link to="/signup" className="ml-1 text-purple-600">
-                Create Account
-              </Link>
-            </p>
+            <Link to="/signup" className="ml-1 text-purple-600">
+              <Button className="hollowBtn w-full">Create Account</Button>
+            </Link>
           </Form>
         </Formik>
-      </div>
+      </AuthCard>
     </FormLayout>
   );
 };
