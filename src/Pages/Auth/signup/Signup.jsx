@@ -3,24 +3,36 @@ import { object, string, ref } from "yup";
 import FormLayout from "../../../components/FormLayout";
 import AuthCard from "../../../components/AuthCard";
 import Button from "../../../components/Layout/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import { signupUser } from "../../../API/query/userQuery";
+import toast from "react-hot-toast";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   const signUpValidationSchema = object({
     firstName: string().required("Name is required"),
     lastName: string().required("Last is required"),
     email: string().email("Invalid email").required("Email is required"),
     password: string()
-      .min(6, "Password must be at least 6 characters")
+      .min(8, "Password must be at least 8 characters")
       .required("Password is required"),
     repeatPassword: string()
       .oneOf([ref("password"), null], "Passwords must match")
       .required("Please confirm your password"),
   });
 
-  const handleSubmit = (val) => {
-    console.log(val);
-  };
+  const { mutate, isPending } = useMutation({
+    mutationFn: signupUser,
+    mutationKey: ["signup key"],
+    onSuccess: (_, variables) => {
+      navigate(`/register-email-varify/${variables.email}`);
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
 
   return (
     <FormLayout>
@@ -34,12 +46,19 @@ const Signup = () => {
             password: "",
             repeatPassword: "",
           }}
-          onSubmit={handleSubmit}
+          onSubmit={(val) => {
+            mutate({
+              firstName: val.firstName,
+              lastName: val.lastName,
+              email: val.email,
+              password: val.password,
+            });
+          }}
           validationSchema={signUpValidationSchema}
         >
           <Form className="flex flex-col gap-2 bg-white">
-            <div className="flex gap-3">
-              <div className="flex flex-col gap-3 px-3 py-2">
+            <div className="flex gap-3 max-sm:flex-col">
+              <div className="flex flex-1 flex-col gap-3 px-3 py-2">
                 <label className="text-sm font-medium" htmlFor="firstName">
                   First Name
                 </label>
@@ -55,7 +74,7 @@ const Signup = () => {
                   component="div"
                 />
               </div>
-              <div className="flex flex-col gap-3 px-3 py-2">
+              <div className="flex flex-1 flex-col gap-3 px-3 py-2">
                 <label className="text-sm font-medium" htmlFor="lastName">
                   Last Name
                 </label>

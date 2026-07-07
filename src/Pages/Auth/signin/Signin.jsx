@@ -4,18 +4,33 @@ import FormLayout from "../../../components/FormLayout";
 import Button from "../../../components/Layout/Button";
 import { Link } from "react-router-dom";
 import AuthCard from "../../../components/AuthCard";
+import { useMutation } from "@tanstack/react-query";
+import { signinUser } from "../../../API/query/userQuery";
+import toast from "react-hot-toast";
 
 const Signin = () => {
   const signInValidationSchema = object({
     email: string().email("Invalid email").required("Email is required"),
     password: string()
-      .min(6, "Password must be at least 6 characters")
+      .min(8, "Password must be at least 8 characters")
       .required("Password is required"),
   });
 
-  const handleSubmit = (val) => {
-    console.log(val);
-  };
+  const { mutate, isPending, error, isError } = useMutation({
+    mutationKey: ["signin-user"],
+    mutationFn: signinUser,
+    onSuccess: (data) => {
+      console.log(data);
+      const { token } = data;
+      if (token) {
+        console.log("Login with token,", token);
+      }
+    },
+    onError: (error) => {
+      console.log("error here ", error.message);
+      toast.error(error.message);
+    },
+  });
 
   return (
     <FormLayout>
@@ -26,7 +41,12 @@ const Signin = () => {
             email: "",
             password: "",
           }}
-          onSubmit={handleSubmit}
+          onSubmit={(val) => {
+            mutate({
+              email: val.email,
+              password: val.password,
+            });
+          }}
           validationSchema={signInValidationSchema}
         >
           <Form className="flex flex-col gap-3 bg-white">

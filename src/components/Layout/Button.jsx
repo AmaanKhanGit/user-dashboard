@@ -1,7 +1,6 @@
-const Button = ({ children, className, type }) => {
+const Button = ({ children, className, ...props }) => {
   return (
-    <button type={type ? type : "button"} className={`myBtn ${className}`}>
-      {" "}
+    <button {...props} className={`myBtn ${className}`}>
       {children}
     </button>
   );

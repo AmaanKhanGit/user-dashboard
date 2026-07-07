@@ -5,6 +5,9 @@ import Button from "../../../components/Layout/Button";
 import { useNavigate } from "react-router-dom";
 import AuthCard from "../../../components/AuthCard";
 import { ArrowLeft } from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
+import { sendForgotMail } from "../../../API/query/userQuery";
+import toast from "react-hot-toast";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
@@ -13,9 +16,18 @@ const ForgotPassword = () => {
     email: string().email("Invalid email").required("Email is required"),
   });
 
-  const handleSubmit = (val) => {
-    console.log(val);
-  };
+  const { mutate } = useMutation({
+    mutationKey: ["send-forgot-mail"],
+    mutationFn: sendForgotMail,
+    onSettled: (data, _, variables) => {
+      console.log(data);
+      const { previewUrl } = data;
+      navigate(`/forgot-success/${variables.email}`);
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
 
   return (
     <FormLayout>
@@ -34,7 +46,7 @@ const ForgotPassword = () => {
           initialValues={{
             email: "",
           }}
-          onSubmit={handleSubmit}
+          onSubmit={(val) => mutate({ email: val.email })}
           validationSchema={forgotPasswordValidationSchema}
         >
           <Form className="flex flex-col gap-3 bg-white">

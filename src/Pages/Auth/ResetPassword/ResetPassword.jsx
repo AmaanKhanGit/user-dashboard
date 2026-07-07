@@ -3,6 +3,9 @@ import FormLayout from "../../../components/FormLayout";
 import AuthCard from "../../../components/AuthCard";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { object, string, ref } from "yup";
+import { useMutation } from "@tanstack/react-query";
+import { verifyForgotToken } from "../../../API/query/userQuery";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ResetPassword = () => {
   const forgotPasswordValidationSchema = object({
@@ -14,9 +17,16 @@ const ResetPassword = () => {
       .required("Please confirm your password"),
   });
 
-  const handleSubmit = (val) => {
-    console.log(val);
-  };
+  const { token } = useParams();
+  const navigate = useNavigate();
+
+  const { mutate } = useMutation({
+    mutationKey: ["reset-pass", token],
+    mutationFn: verifyForgotToken,
+    onSuccess: () => {
+      navigate("/reset-success");
+    },
+  });
 
   return (
     <FormLayout>
@@ -30,7 +40,7 @@ const ResetPassword = () => {
             password: "",
             repeatPassword: "",
           }}
-          onSubmit={handleSubmit}
+          onSubmit={(val) => mutate({ token, password: val.password })}
           validationSchema={forgotPasswordValidationSchema}
         >
           <Form className="flex flex-col gap-3 bg-white">
