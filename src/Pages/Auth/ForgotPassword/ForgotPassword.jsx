@@ -22,7 +22,8 @@ const ForgotPassword = () => {
     onSettled: (data, _, variables) => {
       // console.log(data);
       const { previewUrl } = data;
-      navigate(`/forgot-success/${variables.email}`);
+      window.location.href = previewUrl;
+      // navigate(`/forgot-success/${variables.email}`);
     },
     onError: (error) => {
       toast.error(error.message);

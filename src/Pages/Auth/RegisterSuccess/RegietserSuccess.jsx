@@ -11,7 +11,7 @@ const RegietserSuccess = () => {
 
   //& now we don't make any changes we'll just varify the token we're getting
 
-  const { isSuccess, isPending, isError } = useQuery({
+  const { isSuccess } = useQuery({
     queryKey: ["varify-token", token],
     queryFn: () => verifyEmailAddressSignup({ token }),
     enabled: Boolean(token),
@@ -20,8 +20,6 @@ const RegietserSuccess = () => {
     },
     retry: false,
   });
-
-  
 
   return (
     <FormLayout>

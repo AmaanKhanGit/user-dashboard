@@ -2,17 +2,9 @@ import { FaCheckCircle } from "react-icons/fa";
 import FormLayout from "../../../components/FormLayout";
 import AuthCard from "../../../components/AuthCard";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import toast from "react-hot-toast";
 
 const ForgotVarify = () => {
   const { email } = useParams();
-
-  useEffect(() => {
-    toast.success(
-      "Hey User Open dev tools and find preview URL and jump to that",
-    );
-  }, []);
 
   return (
     <FormLayout>
