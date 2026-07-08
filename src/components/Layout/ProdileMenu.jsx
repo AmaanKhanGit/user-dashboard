@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const ProfileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { logout } = useAuth();
 
   return (
     <div className="relative">
@@ -29,7 +32,10 @@ const ProfileMenu = () => {
           </button>
         </Link>
 
-        <button className="w-full cursor-pointer rounded-xl px-4 py-3 text-left text-lg text-red-600 transition-colors hover:bg-red-50">
+        <button
+          onClick={logout}
+          className="w-full cursor-pointer rounded-xl px-4 py-3 text-left text-lg text-red-600 transition-colors hover:bg-red-50"
+        >
           Logout
         </button>
       </div>

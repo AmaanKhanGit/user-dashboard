@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import Button from "./Layout/Button";
+import useAuth from "../hooks/useAuth";
 
 const links = [
   {
@@ -41,6 +42,8 @@ const Sidebar = ({ onClose, className }) => {
     onClose?.();
   };
 
+  const { logout } = useAuth();
+
   return (
     <aside className={className}>
       <div className="flex flex-1 flex-col items-start gap-4">
@@ -64,7 +67,9 @@ const Sidebar = ({ onClose, className }) => {
         })}
       </div>
 
-      <Button className="dangerBtn mt-auto">Logout</Button>
+      <Button onClick={logout} className="dangerBtn mt-auto">
+        Logout
+      </Button>
     </aside>
   );
 };

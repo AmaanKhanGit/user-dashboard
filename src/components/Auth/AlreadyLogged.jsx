@@ -4,8 +4,8 @@ import useAuth from "../../hooks/useAuth";
 const AlreadyLogged = ({ children }) => {
   const { token, loading } = useAuth();
 
-  if (loading) {
-    return <div>Loading...</div>;
+ if (loading) {
+    return <Loading />;
   }
 
   return <>{!token ? children : <Navigate to="/" />}</>;
