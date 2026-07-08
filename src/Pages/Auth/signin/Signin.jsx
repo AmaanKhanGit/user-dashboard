@@ -2,13 +2,17 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { object, string, ref } from "yup";
 import FormLayout from "../../../components/FormLayout";
 import Button from "../../../components/Layout/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthCard from "../../../components/AuthCard";
 import { useMutation } from "@tanstack/react-query";
 import { signinUser } from "../../../API/query/userQuery";
 import toast from "react-hot-toast";
+import useAuth from "../../../hooks/useAuth";
 
 const Signin = () => {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
   const signInValidationSchema = object({
     email: string().email("Invalid email").required("Email is required"),
     password: string()
@@ -20,14 +24,15 @@ const Signin = () => {
     mutationKey: ["signin-user"],
     mutationFn: signinUser,
     onSuccess: (data) => {
-      console.log(data);
       const { token } = data;
       if (token) {
-        console.log("Login with token,", token);
+        if (token) {
+          login(token);
+          navigate("/");
+        }
       }
     },
     onError: (error) => {
-      console.log("error here ", error.message);
       toast.error(error.message);
     },
   });
@@ -38,8 +43,8 @@ const Signin = () => {
         <h1 className="text-2xl font-bold">Login to your account</h1>
         <Formik
           initialValues={{
-            email: "",
-            password: "",
+            email: "test@gmail.com",
+            password: "testpass123",
           }}
           onSubmit={(val) => {
             mutate({

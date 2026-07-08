@@ -20,7 +20,7 @@ const ForgotPassword = () => {
     mutationKey: ["send-forgot-mail"],
     mutationFn: sendForgotMail,
     onSettled: (data, _, variables) => {
-      console.log(data);
+      // console.log(data);
       const { previewUrl } = data;
       navigate(`/forgot-success/${variables.email}`);
     },

@@ -15,7 +15,7 @@ const RegisterEmailVarify = () => {
     mutationKey: ["send-varifcation-mail"],
     mutationFn: sendVarificationMail,
     onSettled: (data) => {
-      console.log(data);
+      // console.log(data);
       const { previewUrl } = data;
       window.location.href = previewUrl;
     },
@@ -27,8 +27,6 @@ const RegisterEmailVarify = () => {
 
   useEffect(() => {
     if (email) {
-      console.log("use effect", email);
-
       mutate({ email });
     }
   }, [email, mutate]);

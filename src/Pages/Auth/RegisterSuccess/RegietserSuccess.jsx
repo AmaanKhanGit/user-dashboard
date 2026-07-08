@@ -8,7 +8,6 @@ import { verifyEmailAddressSignup } from "../../../API/query/userQuery";
 import toast from "react-hot-toast";
 const RegietserSuccess = () => {
   const { token } = useParams();
-  console.log(token);
 
   //& now we don't make any changes we'll just varify the token we're getting
 

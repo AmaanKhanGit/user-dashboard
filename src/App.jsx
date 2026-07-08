@@ -14,21 +14,114 @@ import ResetPassword from "./Pages/Auth/ResetPassword/ResetPassword";
 import ResetSuccess from "./Pages/Auth/ResetSuccess/ResetSuccess";
 import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ProtectedRoute from "./components/Auth/ProtectedRoute";
+import AlreadyLogged from "./components/Auth/AlreadyLogged";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Dashboard /> },
-  { path: "/profile", element: <Profile /> },
-  { path: "/notifications", element: <Notifications /> },
-  { path: "/settings", element: <Settings /> },
-  { path: "/help", element: <Help /> },
-  { path: "/signin", element: <Signin /> },
-  { path: "/signup", element: <Signup /> },
-  { path: "/register-email-varify/:email", element: <RegisterEmailVarify /> },
-  { path: "/email-verify/:token", element: <RegietserSuccess /> },
-  { path: "/forgot-password", element: <ForgotPassword /> },
-  { path: "/forgot-success/:email", element: <ForgotVarify /> },
-  { path: "/forgot-password-verify/:token", element: <ResetPassword /> },
-  { path: "/reset-success", element: <ResetSuccess /> },
+  {
+    path: "/",
+    element: (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/profile",
+    element: (
+      <ProtectedRoute>
+        <Profile />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/notifications",
+    element: (
+      <ProtectedRoute>
+        <Notifications />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/settings",
+    element: (
+      <ProtectedRoute>
+        <Settings />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/help",
+    element: (
+      <ProtectedRoute>
+        <Help />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/signin",
+    element: (
+      <AlreadyLogged>
+        <Signin />
+      </AlreadyLogged>
+    ),
+  },
+  {
+    path: "/signup",
+    element: (
+      <AlreadyLogged>
+        <Signup />
+      </AlreadyLogged>
+    ),
+  },
+  {
+    path: "/register-email-varify/:email",
+    element: (
+      <AlreadyLogged>
+        <RegisterEmailVarify />
+      </AlreadyLogged>
+    ),
+  },
+  {
+    path: "/email-verify/:token",
+    element: (
+      <AlreadyLogged>
+        <RegietserSuccess />
+      </AlreadyLogged>
+    ),
+  },
+  {
+    path: "/forgot-password",
+    element: (
+      <AlreadyLogged>
+        <ForgotPassword />
+      </AlreadyLogged>
+    ),
+  },
+  {
+    path: "/forgot-success/:email",
+    element: (
+      <AlreadyLogged>
+        <ForgotVarify />
+      </AlreadyLogged>
+    ),
+  },
+  {
+    path: "/forgot-password-verify/:token",
+    element: (
+      <AlreadyLogged>
+        <ResetPassword />
+      </AlreadyLogged>
+    ),
+  },
+  {
+    path: "/reset-success",
+    element: (
+      <AlreadyLogged>
+        <ResetSuccess />
+      </AlreadyLogged>
+    ),
+  },
 ]);
 
 function App() {
