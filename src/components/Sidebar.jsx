@@ -20,21 +20,6 @@ const links = [
     icon: FaUser,
     route: "/profile",
   },
-  {
-    title: "Notification",
-    icon: FaBell,
-    route: "/notifications",
-  },
-  {
-    title: "Settings",
-    icon: FaCog,
-    route: "/settings",
-  },
-  {
-    title: "Help",
-    icon: FaQuestionCircle,
-    route: "/help",
-  },
 ];
 
 const Sidebar = ({ onClose, className }) => {
