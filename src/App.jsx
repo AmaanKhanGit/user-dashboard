@@ -1,9 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Profile from "./Pages/Profile/Profile";
-import Notifications from "./Pages/Notifications/Notifications";
-import Settings from "./Pages/Settings/Settings";
-import Help from "./Pages/Help/Help";
 import Signup from "./Pages/Auth/signup/Signup";
 import Signin from "./Pages/Auth/signin/Signin";
 import RegisterEmailVarify from "./Pages/Auth/RegisterEmailVarify/RegisterEmailVarify";
@@ -31,30 +28,6 @@ const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <Profile />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/notifications",
-    element: (
-      <ProtectedRoute>
-        <Notifications />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/settings",
-    element: (
-      <ProtectedRoute>
-        <Settings />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/help",
-    element: (
-      <ProtectedRoute>
-        <Help />
       </ProtectedRoute>
     ),
   },
